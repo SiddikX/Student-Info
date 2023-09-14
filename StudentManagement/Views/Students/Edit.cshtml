@@ -1,0 +1,81 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h1>Edit Student</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-method="post" asp-route-id=“@Model.Id”>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ClassId" class="control-label">Class</label>
+                <select asp-for="ClassId" asp-items="ViewBag.ClassId" class="form-control"></select>
+                <span asp-validation-for="ClassId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label">Date of Birth</label>
+                <input asp-for="DOB" class="form-control" id="dobInput" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+
+            <script>
+                // Format the date to 'yyyy-MM-dd' and set it as the input value
+                var dobInput = document.getElementById('dobInput');
+                var dobDate = new Date('@Model.DOB'.replace('T', ' '));
+                if (!isNaN(dobDate.getTime())) {
+                    var formattedDate = dobDate.toISOString().split('T')[0];
+                    dobInput.value = formattedDate;
+                }
+            </script>
+
+            <div class="form-group">
+                <label class="control-label">Gender</label>
+                <div>
+                    <input type="radio" asp-for="Gender" value="1" /> Male
+                    <input type="radio" asp-for="Gender" value="2" /> Female
+                </div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ModificationDate" class="control-label"></label>
+                <input asp-for="ModificationDate" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (!ViewData.ModelState.IsValid)
+{
+     <div class=“alert alert-danger” role=“alert”> @Html.ValidationSummary() </div>
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
