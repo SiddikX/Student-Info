@@ -67,7 +67,7 @@ namespace StudentManagement.Controllers
             return View(@class);
         }
 
-        // GET: Classes/Edit/5
+        // GET: Classes/Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Classes == null)
@@ -83,7 +83,7 @@ namespace StudentManagement.Controllers
             return View(@class);
         }
 
-        // POST: Classes/Edit/5
+        // POST: Classes/Edit
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,7 +118,7 @@ namespace StudentManagement.Controllers
             return View(@class);
         }
 
-        // GET: Classes/Delete/5
+        // GET: Classes/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Classes == null)
@@ -136,7 +136,7 @@ namespace StudentManagement.Controllers
             return View(@class);
         }
 
-        // POST: Classes/Delete/5
+        // POST: Classes/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

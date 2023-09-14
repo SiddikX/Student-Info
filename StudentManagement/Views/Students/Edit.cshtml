@@ -1,10 +1,10 @@
 ﻿@model Student
 
 @{
-    ViewData["Title"] = "Edit Student";
+    ViewData["Title"] = "Edit Info";
 }
 
-<h1>Edit Student</h1>
+<h3>Edit Student Info</h3>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -12,20 +12,20 @@
             <input type="hidden" asp-for="Id" />
 
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <label asp-for="Name" class="control-label fw-bold"></label>
+                <input asp-for="Name" class="form-control mb-1" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ClassId" class="control-label">Class</label>
-                <select asp-for="ClassId" asp-items="ViewBag.ClassId" class="form-control"></select>
+                <label asp-for="ClassId" class="control-label fw-bold">Class</label>
+                <select asp-for="ClassId" asp-items="ViewBag.ClassId" class="form-control mb-1"></select>
                 <span asp-validation-for="ClassId" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="DOB" class="control-label">Date of Birth</label>
-                <input asp-for="DOB" class="form-control" id="dobInput" />
+                <label asp-for="DOB" class="control-label fw-bold">Date of Birth</label>
+                <input asp-for="DOB" class="form-control mb-1" id="dobInput" />
                 <span asp-validation-for="DOB" class="text-danger"></span>
             </div>
 
@@ -40,26 +40,15 @@
             </script>
 
             <div class="form-group">
-                <label class="control-label">Gender</label>
+                <label class="control-label fw-bold">Gender</label>
                 <div>
                     <input type="radio" asp-for="Gender" value="1" /> Male
                     <input type="radio" asp-for="Gender" value="2" /> Female
                 </div>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" readonly />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="ModificationDate" class="control-label"></label>
-                <input asp-for="ModificationDate" class="form-control" readonly />
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-success mt-2 mb-2" />
             </div>
         </form>
     </div>
