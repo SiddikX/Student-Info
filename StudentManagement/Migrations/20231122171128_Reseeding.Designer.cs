@@ -12,8 +12,8 @@ using StudentManagement;
 namespace StudentManagement.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230914111100_RemovedDOBFormated")]
-    partial class RemovedDOBFormated
+    [Migration("20231122171128_Reseeding")]
+    partial class Reseeding
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

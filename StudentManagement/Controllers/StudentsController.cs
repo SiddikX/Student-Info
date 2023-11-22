@@ -109,7 +109,6 @@ namespace StudentManagement.Controllers
             {
                 return NotFound();
             }
-
             var student = await _context.Students
                 .Include(s => s.Class)
                 .FirstOrDefaultAsync(m => m.Id == id);

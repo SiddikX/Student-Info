@@ -15,18 +15,16 @@ namespace StudentManagement.SeedData
             // Check if the Classes table already has data
             if (context.Classes.Any())
             {
-                return; // Database has already been seeded
+                return;
             }
-
             // Add initial class data
             var classes = new Class[]
             {
-                new Class { Name = "One", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
-                new Class { Name = "Two", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
-                new Class { Name = "Three", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
-                new Class { Name = "Four", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
-                new Class { Name = "Five", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
-                // Add more class entries as needed
+                new Class { Name = "Six", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
+                new Class { Name = "Seven", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
+                new Class { Name = "Eight", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
+                new Class { Name = "Nine", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
+                new Class { Name = "Ten", CreatedDate = DateTime.Now, ModificationDate = DateTime.Now },
             };
 
             foreach (var c in classes)
@@ -42,7 +40,7 @@ namespace StudentManagement.SeedData
             // Check if the Students table already has data
             if (context.Students.Any())
             {
-                return; // Database has already been seeded
+                return;
             }
 
             // Add initial student data
@@ -51,7 +49,7 @@ namespace StudentManagement.SeedData
                 new Student
                 {
                     Name = "Sadman",
-                    ClassId = 1, // Assuming "One" class has Id 1
+                    ClassId = 1, // Assuming Class "Six" has Id 1
                     DOB = new DateTime(2017, 1, 2),
                     Gender = 1, // Male
                     CreatedDate = DateTime.Now,
@@ -60,18 +58,18 @@ namespace StudentManagement.SeedData
                 new Student
                 {
                     Name = "Sudipto",
-                    ClassId = 2, // Assuming "Two" class has Id 2
+                    ClassId = 2,
                     DOB = new DateTime(2013, 6, 18),
-                    Gender = 1, // Male
+                    Gender = 1,
                     CreatedDate = DateTime.Now,
                     ModificationDate = DateTime.Now
                 },
                 new Student
                 {
                     Name = "Ira",
-                    ClassId = 1, // Assuming "One" class has Id 1
+                    ClassId = 1,
                     DOB = new DateTime(2010, 12, 12),
-                    Gender = 2, // Female
+                    Gender = 2,
                     CreatedDate = DateTime.Now,
                     ModificationDate = DateTime.Now
                 },
